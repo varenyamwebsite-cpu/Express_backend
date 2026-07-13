@@ -10,4 +10,8 @@ app.use(express.json());
 app.use(cors())
 app.use("/v1", V1Router);
 
-app.listen(PORT, () => { console.log("server running on port: ", PORT) });
+const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
